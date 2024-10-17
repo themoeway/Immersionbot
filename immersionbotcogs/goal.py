@@ -1,14 +1,11 @@
 import discord
 from discord.ext import commands
-from datetime import timedelta
-from datetime import timedelta
 from discord import app_commands
-from modals.sql import Set_Goal, Store
+from modals.sql import Set_Goal
 import time
 import modals.helpers as helpers
 from modals.constants import tmw_id, _GOAL_DB, _IMMERSION_CODES
 import json
-from datetime import datetime
 
 class Goal(commands.Cog):
 

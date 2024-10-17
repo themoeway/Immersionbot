@@ -3,12 +3,10 @@ from discord.ext import commands
 from discord import app_commands
 import asyncio
 import os
-import io
 import modals.help_text as help_text
 import datetime, time
 from modals.constants import tmw_id, _MULTIPLIERS, _JP_DB
 from discord.app_commands import Choice
-import pprint
 import json
 from modals.sql import Set_jp
 from modals.sql import Debug
@@ -40,7 +38,7 @@ class BotManager(commands.Cog):
     @app_commands.command(name="reload_cog", description="Reloads cogs.")
     @app_commands.checks.has_role("Moderator")
     async def reload_cog(self, interaction: discord.Interaction):
-        channel = interaction.channel
+        interaction.channel
 
         my_view = CogSelectView(timeout=1800)
         for cog_name in [extension for extension in self.bot.extensions]:

@@ -14,7 +14,6 @@ from modals.sql import MediaType
 import logging
 from modals.constants import tmw_id, _GOAL_DB, _DB_NAME, _MULTIPLIERS, _IMMERSION_CODES
 import json
-from datetime import datetime
 #############################################################
 
 log = logging.getLogger(__name__)

@@ -9,10 +9,9 @@ import modals.helpers as helpers
 import logging
 import aiohttp
 import asyncio
-from modals.constants import tmw_id, _DB_NAME, _JP_DB, _GOAL_DB, _IMMERSION_CODES, _MULTIPLIERS
+from modals.constants import tmw_id, _DB_NAME, _GOAL_DB, _IMMERSION_CODES, _MULTIPLIERS
 from modals.log_constructor import Log_constructor
 import json
-from datetime import datetime
 
 #############################################################
 

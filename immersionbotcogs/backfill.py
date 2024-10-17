@@ -9,7 +9,6 @@ from modals.sql import Store
 import modals.helpers as helpers
 import logging
 import aiohttp
-import random
 import asyncio
 from modals.constants import tmw_id, _DB_NAME, _IMMERSION_CODES, _MULTIPLIERS
 import json

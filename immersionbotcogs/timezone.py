@@ -1,15 +1,11 @@
 import discord
 from discord.ext import commands
-from datetime import timedelta
 from typing import Optional
 from discord import app_commands
-from discord.app_commands import Choice
-from typing import List
-from discord.ui import Select, Button
-from discord.ui.item import Item
+from discord.ui import Button
 from modals.constants import tmw_id, timezones
 
-from typing import TYPE_CHECKING, Any, Optional, Sequence, NamedTuple
+from typing import Optional
 #############################################################
 
 options = []

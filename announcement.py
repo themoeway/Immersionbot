@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from datetime import date as new_date, timedelta
+from datetime import timedelta
 
 from discord import app_commands
 
@@ -144,7 +144,7 @@ class Announcement(commands.Cog):
         # ADD WINNER AND WINNER_POINTS
         # ADD announcement message with print(f'__**{media_type_str}**__\n' + ' '.join([f"{row['user_name']}" for _, row in top_users.iterrows()]))
         with Store(_DB_NAME) as store:
-            announcement = f'''I want to congratulate {winner} for getting the first place in {month}'s immersion challenge with {winner_points} points! We had {store.count_unique_user((beginn, end))} participants in {month} logging {store.count_total_logs((beginn, end))} entries. {helpers.random_emoji()} {helpers.random_emoji()}'''
+            f'''I want to congratulate {winner} for getting the first place in {month}'s immersion challenge with {winner_points} points! We had {store.count_unique_user((beginn, end))} participants in {month} logging {store.count_total_logs((beginn, end))} entries. {helpers.random_emoji()} {helpers.random_emoji()}'''
         
         #for media_type in ['OUTPUT']:
         for media_type in [None, 'ANIME', 'VN', 'MANGA', 'READING', 'LISTENING', 'READTIME', 'BOOK']:
@@ -170,13 +170,13 @@ class Announcement(commands.Cog):
             if len(timeframe.split('-')) == 6:
                 beginn = interaction.created_at.replace(year=int(dates[0]), month=int(dates[1]), day=int(dates[2]))
                 end = interaction.created_at.replace(year=int(dates[3]), month=int(dates[4]), day=int(dates[5]))
-                title = f"""{beginn.strftime("{0} %b").format(helpers.ordinal(beginn.day))}-{end.strftime("{0} %b").format(helpers.ordinal(end.day))}"""
+                f"""{beginn.strftime("{0} %b").format(helpers.ordinal(beginn.day))}-{end.strftime("{0} %b").format(helpers.ordinal(end.day))}"""
                 if beginn > end:
                     return await interaction.response.send_message(content='You switched up the dates.', ephemeral=True)
             elif len(timeframe.split('-')) == 3:
                 beginn = interaction.created_at.replace(year=int(dates[0]), month=int(dates[1]), day=int(dates[2]), hour=0, minute=0, second=0)
                 end = beginn + timedelta(days=1)
-                title = f"""{beginn.strftime("{0} %b").format(helpers.ordinal(beginn.day))}-{end.strftime("{0} %b").format(helpers.ordinal(end.day))}"""
+                f"""{beginn.strftime("{0} %b").format(helpers.ordinal(beginn.day))}-{end.strftime("{0} %b").format(helpers.ordinal(end.day))}"""
                 if beginn > interaction.created_at:
                     return await interaction.response.send_message(content='''You can't look into the future.''', ephemeral=True)
             else:

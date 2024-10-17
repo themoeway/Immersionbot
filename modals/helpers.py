@@ -7,7 +7,6 @@ from vndb_thigh_highs import VNDB
 from vndb_thigh_highs.models import VN
 from datetime import datetime, timedelta
 from AnilistPython import Anilist
-import tmdbsimple as tmdb
 import random
 from modals.constants import ACHIEVEMENTS, PT_ACHIEVEMENTS, ACHIEVEMENT_RANKS, ACHIEVEMENT_EMOJIS, ACHIEVEMENT_IDS, EMOJI_TABLE, JACK_FILTER
 
@@ -508,7 +507,6 @@ def get_cover(media_type, name):
 #bits and parts for final log message like point unit (chars, pgs, etc)
 #points conversion (1/350 points/characters → x points)
 #name of the log immersion via anilist or vndb
-import time
 
 def get_name_of_immersion(media_type, name, codes, file_path):
     if name in codes.keys():

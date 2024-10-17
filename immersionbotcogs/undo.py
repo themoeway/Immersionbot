@@ -81,7 +81,7 @@ class Undo(commands.Cog):
     @app_commands.describe(timeframe='''DEFAULT=MONTH; Week, Month, Year, All, [year-month-day] or [year-month-day-year-month-day]''')
     async def undo_log(self, interaction: discord.Interaction, timeframe: Optional[str]):
         
-        channel = interaction.channel
+        interaction.channel
         # if channel.id != 1010323632750350437 and channel.id != 814947177608118273 and channel.type != discord.ChannelType.private:
         #     return await interaction.response.send_message(content='You can only log in #immersion-log or DMs.', ephemeral=True)
         
@@ -167,9 +167,9 @@ class Undo(commands.Cog):
             codes_path = _IMMERSION_CODES
             try:
                 with open(codes_path, "r") as file:
-                    codes = json.load(file)
+                    json.load(file)
             except FileNotFoundError:
-                codes = {}
+                pass
             log = Log(interaction.user.id, relevant_result[1].media_type.value, relevant_result[1].amount, relevant_result[1].title, relevant_result[1].note, relevant_result[1].created_at)
             with Set_Goal(_GOAL_DB) as store_goal:
                 helpers.undo_goal(goals, log, store_goal, MULTIPLIERS)

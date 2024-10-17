@@ -7,10 +7,10 @@ from datetime import timedelta
 import pytz
 from discord.ui import Select
 from discord import app_commands
-from modals.sql import Store, Set_Goal
+from modals.sql import Set_Goal
 import modals.helpers as helpers
 import json
-from modals.constants import _GOAL_DB, _IMMERSION_CODES, _MULTIPLIERS
+from modals.constants import _GOAL_DB, _IMMERSION_CODES
 from modals.goal import Goal
 
 class MyView(discord.ui.View):
