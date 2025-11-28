@@ -29,3 +29,5 @@ typing_extensions==4.12.2
 urllib3==2.2.3
 vndb-thigh-highs==0.1.8
 yarl==1.16.0
+matplotlib=3.10.7
+pandas=2.3.3
